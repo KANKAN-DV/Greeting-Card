@@ -1,0 +1,97 @@
+*{
+				margin: 0;
+				padding: 0;
+			}
+			a{
+				text-decoration: none;
+			}
+			html,body{
+				width: 100%;
+				height: 100%;
+			}
+			body{
+				background-image: url("../img/3.jpg");
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+			.card{
+				width: 300px;
+				height: 300px;
+				background-color: white;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				transition: all 1s ease; 
+			}
+			.card-outside,.card-inside{
+				position: absolute;
+				right: 0;
+				width: 300px;
+				height: 300px;
+			}
+			.card-outside{
+				z-index: 100;
+				perspective: 1000px;
+			}
+			.card-outside-container{
+				width: 100%;
+				height: 100%;
+				transform-style: preserve-3d;
+				transform-origin: left;
+				transition: all 1s ease;
+			}
+			.card:hover .card-outside-container{
+				transform: rotateY(-180deg);
+			}
+			.card:hover{
+				width: 500px;
+			}
+			.card-front,.card-back{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				backface-visibility: hidden;
+				right: 0;
+				background-color: white;
+			}
+			.card-front-top{
+				width: 100%;
+				height: 240px;
+				background: linear-gradient(to bottom,#ff73b9,#ff40a1);
+				clip-path: polygon(0 0,100% 0,100% 90%,57% 90%,50% 100%,43% 90%,0 90%);
+			}
+			.card-front-top img{
+				width: 100%;
+				height: 100%;
+			}
+			.card-front-bot{
+				font-size: 26px;
+				background-image: linear-gradient(to top,#ff73b9 , #00C6FF);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				font-weight: 800;
+				text-align: center;
+			}
+			.card-back{
+				transform: rotateY(180deg);
+			}
+			.video-container{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				clip-path: polygon(0 0,100% 0,90% 50%,100% 100%,0 100%);
+			}
+			.card-inside{
+				z-index: 99;
+			}
+			#typewrite{
+				color: black;
+				font-size: 15px;
+				text-align: center;
+				line-height: 20px;
+				background-image: linear-gradient(to top,#ff73b9 , #00C6FF);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			
